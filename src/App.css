@@ -1,38 +1,404 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.mainContainer {
+  width: 100%;
+  height: 100%;
+  background: #040406;
   min-height: 100vh;
+  font-family: 'Poppins';
+  font-style: normal;
+  overflow: hidden;
+  position: fixed;
+  font-size: 1rem;
+}
+
+.logoImage {
+  position: fixed;
+  width: 1.736vw;
+  height: 2.93vh;
+  left: 3.056vw;
+  top: 1.855vh;
+}
+.logoName {
+  position: absolute;
+
+  height: 4.297vh;
+  left: 5.625vw;
+  top: 1.172vh;
+
+  font-weight: 700;
+  font-size: 1.8125rem;
+  line-height: 44px;
+
+  text-transform: uppercase;
+
+  background: linear-gradient(94.37deg, #3387d5 -5.94%, #7a06c9 115.34%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nameContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+
+  font-weight: 600;
+
+  line-height: 24px;
+
+  text-transform: capitalize;
+  color: #5a5a5a;
+  margin-left: 38.055vw;
+  padding-top: 2.637vh;
+}
+.borderContainer {
+  width: 5.278vw;
+  margin-left: -1vw;
+  border-bottom: 2px solid #627eea;
+}
+.headingName1 {
+  margin-right: 3.472vw;
+  color: #627eea;
+  padding-bottom: 1.563vh;
+
+  /* border-bottom: 2px solid #627eea; */
+  width: 5.278vw;
+}
+.headingName2 {
+  margin-right: 3.472vw;
+}
+
+.connectContainer {
+  position: absolute;
+  width: 9.722vw;
+  height: 3.906vh;
+  left: 81.944vw;
+  top: 1.367vh;
+
+  background: linear-gradient(94.37deg, #3387d5 -5.94%, #7a06c9 115.34%);
+  border-radius: 30px;
+  font-family: 'Barlow';
+
+  font-weight: 700;
+
+  line-height: 19px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+
+  color: #ffffff;
+  text-shadow: 0.364154px 0.364154px 0.364154px rgba(0, 0, 0, 0.25);
 }
 
-.App-link {
-  color: #61dafb;
+.semicircle {
+  width: 6.25vw;
+  height: 6.35vh;
+  position: fixed;
+
+  left: 50vw;
+  right: 33.68vw;
+  top: 24.22vh;
+  transform: translateX(-50%);
+
+  border-radius: 0 0 50% 50%;
+  background-color: #040406;
+  border: 0.0625rem solid #1c1731;
+  border-top: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.inputContainer {
+  position: fixed;
+  height: 55.37vh;
+  left: 33.68vw;
+  right: 33.68vw;
+  top: 24.22vh;
+  border: 0.0625rem solid #1c1731;
+
+  border-radius: 1.125rem;
+}
+.currentAssetContainer {
+  position: relative;
+  width: 3.47vw;
+  height: 4.88vh;
+  left: 13.9vw;
+  top: -2vh;
+  /* left: 47.57vw; */
+  /* top: 22.949vh; */
+  border: 0.625rem solid #1c1731;
+  border-radius: 50%;
+}
+.assetContainer {
+  box-sizing: border-box;
+
+  position: fixed;
+  width: 27.08vw;
+  height: 5.859vh;
+  left: 36.46vw;
+  top: 36.425vh;
+
+  background: #1c1731;
+  border-radius: 10px;
+}
+.assetImage {
+  position: fixed;
+  /* width: 1.736vw; */
+  height: 2.441vh;
+  left: 38.19vw;
+  top: 38.18vh;
+  border-radius: 50%;
+}
+
+.assetName {
+  position: fixed;
+  /* width: 5.35vw; */
+  height: 2.34vh;
+  left: 40.54vw;
+  top: 38.18vh;
+
+  font-weight: 400;
+
+  line-height: 24px;
+
+  color: #ffffff;
+
+  transform: rotate(0.63deg);
+}
+.dropDownArrow {
+  position: fixed;
+  width: 0.97vw;
+  height: 0.683vh;
+  left: 60.9vw;
+  top: 39.06vh;
+}
+.currentHeading {
+  position: fixed;
+  width: 6.67vw;
+  height: 2.05vh;
+  left: 36.74vw;
+
+  top: 31.93vh;
+
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+
+  color: #c5c5c5;
+}
+.currentValue {
+  width: 5.21vw;
+  height: 3.52vh;
+  position: absolute;
+  left: 58.33vw;
+  top: 31.15vh;
+
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 36px;
+
+  text-align: right;
+
+  color: #627eea;
+}
+.amountHeading {
+  position: absolute;
+  width: 12.99vw;
+  height: 2.05vh;
+  left: 36.74vw;
+  top: 44.628vh;
+
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+
+  color: #dcdcec;
+}
+.amountContainer {
+  position: fixed;
+  width: 27.08vw;
+  height: 5.859vh;
+  left: 36.46vw;
+  top: 47.851vh;
+  background: #1c1731;
+
+  border: 1px solid rgba(110, 86, 248, 0.25);
+  border-radius: 5px;
+}
+.inputAmount {
+  position: fixed;
+  width: 3.402vw;
+  height: 3.03vh;
+  left: 38.19vw;
+  top: 49.41vh;
+
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 142%;
+  color: rgba(110, 86, 248, 0.25);
+  background: #1c1731;
+  border: 0px;
+  color: #6f6f7e;
+}
+.inputCurrency {
+  position: fixed;
+  width: 1.736vw;
+  height: 2.34vh;
+  left: 60.14vw;
+  top: 49.61vh;
+
+  font-weight: 400;
+
+  line-height: 24px;
+
+  color: #ffffff;
+}
+.tokenHeading {
+  position: absolute;
+  width: 17.43vw;
+  height: 2.05vh;
+  left: 36.74vw;
+  top: 56.05vh;
+
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+
+  color: #dcdcec;
+}
+.tokenCount {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 27.08vw;
+  height: 5.859vh;
+  left: 36.46vw;
+  top: 59.2vh;
+
+  background: #1c1731;
+  border-radius: 10px;
+
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 142%;
+
+  display: flex;
+  padding-left: 2vw;
+  padding-top: 1.46vh;
+  color: #6f6f7e;
+}
+
+.buyButton {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 27.01vw;
+  height: 4.882vh;
+  left: 36.527vw;
+  top: 70.019vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(94.37deg, #3387d5 -5.94%, #7a06c9 115.34%);
+  border-radius: 30px;
+
+  font-weight: 600;
+  font-size: 1.125 rem;
+  line-height: 27px;
+
+  color: #ffffff;
+}
+.currencyLogo {
+  position: absolute;
+  left: 56.88%;
+  right: 42.13%;
+  top: 31.93%;
+  bottom: 66.11%;
+
+  border: 0.1px solid #40404f;
+}
+.assetSelectContainer {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 28.47vw;
+  height: 45.01vh;
+  left: 35.76vw;
+  top: 31.15vh;
+  background: #181627;
+
+  border-radius: 18px;
+  overflow: scroll;
+}
+.closeContainer {
+  width: 1.66vw;
+  height: 2.34vh;
+  position: fixed;
+  left: 61.73vw;
+  top: 32.32vh;
+}
+.searchContainer {
+  position: fixed;
+  width: 19.1vw;
+  height: 3.906vh;
+  left: 38.88vw;
+  top: 36.03vh;
+  padding-left: 3.055vw;
+  border: 1px solid rgba(110, 86, 248, 0.25);
+  border-radius: 30px;
+  font-family: 'Nunito';
+  font-weight: 400;
+
+  line-height: 19px;
+
+  background: #181627;
+
+  color: #d2d2d2;
+}
+.searchImage {
+  position: fixed;
+  width: 1.18vw;
+  height: 1.66vh;
+  left: 39.86vw;
+  top: 37.2vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.assetListImage {
+  width: 1.66vw;
+  height: 2.34vh;
+  padding-left: 1.11vw;
+}
+.assetListName {
+  font-weight: 400;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 0.972vw;
+}
+/*  */
+.listContainer {
+  position: fixed;
+  left: 38.88vw;
+  top: 41.5vh;
+  height: 32vh;
+  overflow: scroll;
+  font-size: 0.875rem;
+}
+.assetListContainer {
+  display: flex;
+  flex-direction: row;
+  height: 4.29vh;
+  background: #1b192d;
+  border-radius: 2px;
+  width: 22.08vw;
+  margin-bottom: 1.367vh;
+  align-items: center;
+}
+.tickContainer {
+  width: 1.18vw;
+  height: 1.171vh;
+  margin-left: 11.319vw;
+  overflow: scroll;
 }
