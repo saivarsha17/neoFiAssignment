@@ -58,9 +58,6 @@
   margin-right: 3.472vw;
   color: #627eea;
   padding-bottom: 1.563vh;
-
-  /* border-bottom: 2px solid #627eea; */
-  width: 5.278vw;
 }
 .headingName2 {
   margin-right: 3.472vw;
@@ -212,10 +209,15 @@
   color: #dcdcec;
 }
 .amountContainer {
+  box-sizing: border-box;
+
+  background: #1c1731;
+  border-radius: 10px;
   position: fixed;
   width: 27.08vw;
   height: 5.859vh;
-  left: 36.46vw;
+
+  left: 36.43vw;
   top: 47.851vh;
   background: #1c1731;
 
@@ -223,9 +225,9 @@
   border-radius: 5px;
 }
 .inputAmount {
-  position: fixed;
   width: 3.402vw;
   height: 3.03vh;
+  position: fixed;
   left: 38.19vw;
   top: 49.41vh;
 
@@ -238,9 +240,9 @@
   color: #6f6f7e;
 }
 .inputCurrency {
-  position: fixed;
   width: 1.736vw;
   height: 2.34vh;
+  position: fixed;
   left: 60.14vw;
   top: 49.61vh;
 
@@ -251,7 +253,7 @@
   color: #ffffff;
 }
 .tokenHeading {
-  position: absolute;
+  position: fixed;
   width: 17.43vw;
   height: 2.05vh;
   left: 36.74vw;
@@ -266,8 +268,9 @@
 .tokenCount {
   box-sizing: border-box;
 
-  position: absolute;
+  position: fixed;
   width: 27.08vw;
+
   height: 5.859vh;
   left: 36.46vw;
   top: 59.2vh;
@@ -288,7 +291,7 @@
 .buyButton {
   box-sizing: border-box;
 
-  position: absolute;
+  position: fixed;
   width: 27.01vw;
   height: 4.882vh;
   left: 36.527vw;
@@ -395,6 +398,9 @@
   width: 22.08vw;
   margin-bottom: 1.367vh;
   align-items: center;
+}
+.assetListContainer:hover {
+  cursor: pointer;
 }
 .tickContainer {
   width: 1.18vw;

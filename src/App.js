@@ -8,7 +8,7 @@ function App() {
     token: 'ETHUSDT',
     image: IMAGES.ASSET,
     value: '',
-    amount: '0.00',
+    amount: '',
   });
   const [modal, setModal] = useState(false);
   const [text, setText] = useState('');
@@ -34,6 +34,8 @@ function App() {
     console.log('selected', assets[i]);
     setIndex(i);
     setModal(false);
+    setText('');
+    setAssets(allAssets);
   };
   useEffect(() => {
     setAssets(allAssets);
@@ -92,13 +94,12 @@ function App() {
       <div className="inputContainer">
         <div className="semicircle"></div>
         <img
-        src={currentAsset.image}
-        className="currentAssetContainer"
-        alt="asset"
-      />
+          src={currentAsset.image}
+          className="currentAssetContainer"
+          alt="asset"
+        />
       </div>
 
-     
       {!modal && (
         <>
           <div className="currentHeading">Current value</div>
@@ -123,7 +124,8 @@ function App() {
           <div className="amountContainer">
             <input
               className="inputAmount"
-              placeholder="0.00 "
+              placeholder="0"
+              type={'number'}
               value={currentAsset.amount}
               onChange={(e) => {
                 console.log(e.target.value);
