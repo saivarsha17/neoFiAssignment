@@ -129,7 +129,7 @@ function App() {
                 Amount you want to invest
               </div>
             </div>
-            {/* <div className="assetInputContainer"> */}
+
             <input
               className="inputAmount assetInputContainer"
               placeholder="0"
@@ -145,7 +145,7 @@ function App() {
               }}
             />
             <div className="currency">INR</div>
-            {/* </div> */}
+
             <div className="assetHeadingContainer">
               <div className="assetHeadingName  estimate marginContainer">
                 Estimate Number of ETH You will Get
