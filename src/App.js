@@ -31,7 +31,7 @@ function App() {
       image: assets[i].image,
       token: assets[i].token,
     }));
-    console.log('selected', assets[i]);
+
     setIndex(i);
     setModal(false);
     setText('');
@@ -41,13 +41,11 @@ function App() {
     setAssets(allAssets);
   }, []);
   useEffect(() => {
-    console.log('eter11', currentAsset.token);
     const intervalId = setInterval(() => {
       var requestOptions = {
         method: 'GET',
         redirect: 'follow',
       };
-      console.log('eter1', currentAsset.token);
 
       fetch(
         `https://api.binance.com/api/v1/ticker/price?symbol=${currentAsset.token}`,
@@ -55,15 +53,9 @@ function App() {
       )
         .then((response) => response.text())
         .then((result) => {
-          console.log(result, currentAsset.token);
           const data = JSON.parse(result);
           const currentValue = (parseFloat(data.price) * 80).toFixed(2);
-          console.log(
-            result,
-            currentAsset.token,
-            currentValue,
-            typeof data.price
-          );
+
           setCurrentAsset((prev) => ({
             ...prev,
             value: currentValue,
@@ -136,8 +128,6 @@ function App() {
               type={'number'}
               value={currentAsset.amount}
               onChange={(e) => {
-                console.log(e.target.value);
-
                 setCurrentAsset((prev) => ({
                   ...prev,
                   amount: e.target.value,
@@ -174,7 +164,6 @@ function App() {
               className="closeContainer"
               onClick={() => {
                 setModal(false);
-                setIndex(-1);
               }}
             />
             <div>
@@ -193,12 +182,14 @@ function App() {
                     className="assetListContainer"
                     onClick={() => handleSelect(i)}
                   >
-                    <img
-                      src={data.image}
-                      alt="imageasset"
-                      className="assetListImage"
-                    />
-                    <div className="assetListName">{data.name}</div>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
+                      <img
+                        src={data.image}
+                        alt="imageasset"
+                        className="assetListImage"
+                      />
+                      <div className="assetListName">{data.name}</div>
+                    </div>
                     {index === i && (
                       <img
                         src={IMAGES.TICK}

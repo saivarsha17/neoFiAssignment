@@ -329,6 +329,7 @@
   width: 22.08vw;
   margin-bottom: 1.367vh;
   align-items: center;
+  justify-content: space-between;
 }
 .assetListContainer:hover {
   cursor: pointer;
@@ -336,6 +337,7 @@
 .tickContainer {
   width: 1.18vw;
   height: 1.171vh;
-  margin-left: 11.319vw;
+
+  margin-right: 1.319vw;
   overflow: scroll;
 }
