@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { allAssets } from './constants';
 function App() {
   const [currentAsset, setCurrentAsset] = useState({
-    name: 'Cardano',
-    token: 'ADAUSDT',
-    image: IMAGES.CARDANO,
+    name: 'Ethereum',
+    token: 'ETHUSDT',
+    image: IMAGES.ASSET,
     value: '0',
     amount: '0',
   });
