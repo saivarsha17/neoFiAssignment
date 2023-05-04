@@ -85,8 +85,18 @@
   color: #ffffff;
   text-shadow: 0.364154px 0.364154px 0.364154px rgba(0, 0, 0, 0.25);
 }
+.inputContainer {
+  position: absolute;
+  width: 32.64vw;
+  height: 55.47vh;
+  left: 33.7vw;
+  top: 24.22vh;
 
-.semicircle {
+  border: 0.0625rem solid #1c1731;
+
+  border-radius: 1.125rem;
+}
+.semiCircleContainer {
   width: 6.25vw;
   height: 6.35vh;
   position: fixed;
@@ -101,56 +111,69 @@
   border: 0.0625rem solid #1c1731;
   border-top: none;
 }
-
-.inputContainer {
-  position: fixed;
-  height: 55.37vh;
-  left: 33.68vw;
-  right: 33.68vw;
-  top: 24.22vh;
-  border: 0.0625rem solid #1c1731;
-
-  border-radius: 1.125rem;
-}
-.currentAssetContainer {
+.assetLogo {
   position: relative;
   width: 3.47vw;
   height: 4.88vh;
   left: 13.9vw;
   top: -2vh;
-  /* left: 47.57vw; */
-  /* top: 22.949vh; */
+
   border: 0.625rem solid #1c1731;
   border-radius: 50%;
 }
 .assetContainer {
-  box-sizing: border-box;
-
-  position: fixed;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.78vw;
+  margin-right: 2.78vw;
   width: 27.08vw;
-  height: 5.859vh;
-  left: 36.46vw;
-  top: 36.425vh;
 
+  justify-content: flex-start;
+}
+.assetHeadingContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.assetHeadingName {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 21px;
+  width: 6.67vw;
+  height: 2.05vh;
+  color: #c5c5c5;
+}
+.currencyLogo {
+  border: 0.1px solid #40404f;
+}
+.assetValue {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 21px;
+  width: 5.21vw;
+  height: 2.05vh;
+  color: #627eea;
+}
+
+.assetInputContainer {
+  margin-top: 1.757vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background: #1c1731;
   border-radius: 10px;
-}
-.assetImage {
-  position: fixed;
-  /* width: 1.736vw; */
-  height: 2.441vh;
-  left: 38.19vw;
-  top: 38.18vh;
-  border-radius: 50%;
-}
+  width: 27.08vw;
+  height: 5.859vh;
 
+  align-items: center;
+  margin-bottom: 2.34vh;
+}
+.dropDown {
+  width: 0.97vw;
+  height: 0.683vh;
+  margin-right: 1.74vw;
+}
 .assetName {
-  position: fixed;
-  /* width: 5.35vw; */
-  height: 2.34vh;
-  left: 40.54vw;
-  top: 38.18vh;
-
   font-weight: 400;
 
   line-height: 24px;
@@ -158,144 +181,57 @@
   color: #ffffff;
 
   transform: rotate(0.63deg);
+  height: 2.34vh;
+  margin-left: 0.625vw;
 }
-.dropDownArrow {
-  position: fixed;
-  width: 0.97vw;
-  height: 0.683vh;
-  left: 60.9vw;
-  top: 39.06vh;
-}
-.currentHeading {
-  position: fixed;
-  width: 6.67vw;
-  height: 2.05vh;
-  left: 36.74vw;
+.assetImage {
+  height: 2.441vh;
 
-  top: 31.93vh;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 21px;
-
-  color: #c5c5c5;
-}
-.currentValue {
-  width: 5.21vw;
-  height: 3.52vh;
-  position: absolute;
-  left: 58.33vw;
-  top: 31.15vh;
-
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 36px;
-
-  text-align: right;
-
-  color: #627eea;
+  margin-left: 1.74vw;
 }
 .amountHeading {
-  position: absolute;
   width: 12.99vw;
-  height: 2.05vh;
-  left: 36.74vw;
-  top: 44.628vh;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 21px;
-
-  color: #dcdcec;
 }
-.amountContainer {
-  box-sizing: border-box;
-
-  background: #1c1731;
-  border-radius: 10px;
-  position: fixed;
-  width: 27.08vw;
-  height: 5.859vh;
-
-  left: 36.43vw;
-  top: 47.851vh;
-  background: #1c1731;
-
-  border: 1px solid rgba(110, 86, 248, 0.25);
-  border-radius: 5px;
-}
-.inputAmount {
-  width: 3.402vw;
-  height: 3.03vh;
-  position: fixed;
-  left: 38.19vw;
-  top: 49.41vh;
-
-  font-weight: 600;
-  font-size: 1.375rem;
-  line-height: 142%;
-  color: rgba(110, 86, 248, 0.25);
-  background: #1c1731;
-  border: 0px;
-  color: #6f6f7e;
-}
-.inputCurrency {
-  width: 1.736vw;
-  height: 2.34vh;
+.currency {
   position: fixed;
   left: 60.14vw;
   top: 49.61vh;
 
   font-weight: 400;
+  width: 1.736vw;
+  height: 2.34vh;
 
   line-height: 24px;
 
   color: #ffffff;
 }
-.tokenHeading {
-  position: fixed;
-  width: 17.43vw;
-  height: 2.05vh;
-  left: 36.74vw;
-  top: 56.05vh;
-
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 21px;
-
-  color: #dcdcec;
-}
-.tokenCount {
-  box-sizing: border-box;
-
-  position: fixed;
-  width: 27.08vw;
-
-  height: 5.859vh;
-  left: 36.46vw;
-  top: 59.2vh;
-
-  background: #1c1731;
-  border-radius: 10px;
-
+.inputAmount {
   font-weight: 600;
   font-size: 1.375rem;
   line-height: 142%;
+  color: rgba(110, 86, 248, 0.25);
+  background: #1c1731;
 
-  display: flex;
-  padding-left: 2vw;
-  padding-top: 1.46vh;
+  border: 0px;
   color: #6f6f7e;
+  padding-left: 1.74vw;
+  width: 25.34vw;
 }
 
+.estimate {
+  width: 17.43vw;
+}
+.tokenCount {
+  color: #6f6f7e;
+  font-weight: 600;
+  font-size: 1.375rem;
+  line-height: 142%;
+  margin-left: 1.74vw;
+}
 .buyButton {
-  box-sizing: border-box;
-
-  position: fixed;
   width: 27.01vw;
   height: 4.882vh;
-  left: 36.527vw;
-  top: 70.019vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,24 +240,17 @@
   border-radius: 30px;
 
   font-weight: 600;
-  font-size: 1.125 rem;
+  font-size: 1.125rem;
   line-height: 27px;
 
   color: #ffffff;
+  margin-top: 3vh;
 }
-.currencyLogo {
-  position: absolute;
-  left: 56.88%;
-  right: 42.13%;
-  top: 31.93%;
-  bottom: 66.11%;
-
-  border: 0.1px solid #40404f;
+.marginContainer {
+  margin-bottom: -0.5vh;
 }
 .assetSelectContainer {
-  box-sizing: border-box;
-
-  position: absolute;
+  position: fixed;
   width: 28.47vw;
   height: 45.01vh;
   left: 35.76vw;
@@ -347,6 +276,8 @@
   padding-left: 3.055vw;
   border: 1px solid rgba(110, 86, 248, 0.25);
   border-radius: 30px;
+  width: 19.1vw;
+  height: 3.906vh;
   font-family: 'Nunito';
   font-weight: 400;
 

@@ -7,8 +7,8 @@ function App() {
     name: 'Ethereum',
     token: 'ETHUSDT',
     image: IMAGES.ASSET,
-    value: '',
-    amount: '',
+    value: '0',
+    amount: '0',
   });
   const [modal, setModal] = useState(false);
   const [text, setText] = useState('');
@@ -92,38 +92,46 @@ function App() {
       </div>
 
       <div className="inputContainer">
-        <div className="semicircle"></div>
-        <img
-          src={currentAsset.image}
-          className="currentAssetContainer"
-          alt="asset"
-        />
-      </div>
+        <div className="semiCircleContainer"></div>
+        <img src={currentAsset.image} className="assetLogo" alt="asset" />
 
-      {!modal && (
-        <>
-          <div className="currentHeading">Current value</div>
-          <img src={IMAGES.CURRENCY} alt="currency" className="currencyLogo" />
-
-          <div className="currentValue">{currentAsset.value}</div>
+        {!modal && (
           <div className="assetContainer">
-            <img
-              className="assetImage"
-              src={currentAsset.image}
-              alt="imageasset"
-            />
-            <div className="assetName">{currentAsset.name} </div>
-            <img
-              className="dropDownArrow"
-              src={IMAGES.DROP_DOWN}
-              alt="dropdown"
-              onClick={() => setModal(true)}
-            />
-          </div>
-          <div className="amountHeading">Amount you want to invest</div>
-          <div className="amountContainer">
+            <div className="assetHeadingContainer">
+              <div className="assetHeadingName">Current value</div>
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <img
+                  src={IMAGES.CURRENCY}
+                  alt="currency"
+                  className="currencyLogo"
+                />
+                <div className="assetValue">{currentAsset.value}</div>
+              </div>
+            </div>
+            <div className="assetInputContainer ">
+              <div style={{ display: 'flex', flexDirection: 'row' }}>
+                <img
+                  className="assetImage"
+                  src={currentAsset.image}
+                  alt="imageasset"
+                />
+                <div className="assetName">{currentAsset.name}</div>
+              </div>
+              <img
+                src={IMAGES.DROP_DOWN}
+                alt="dropdown"
+                className="dropDown"
+                onClick={() => setModal(true)}
+              />
+            </div>
+            <div className="assetHeadingContainer">
+              <div className="assetHeadingName  amountHeading marginContainer">
+                Amount you want to invest
+              </div>
+            </div>
+            {/* <div className="assetInputContainer"> */}
             <input
-              className="inputAmount"
+              className="inputAmount assetInputContainer"
               placeholder="0"
               type={'number'}
               value={currentAsset.amount}
@@ -136,70 +144,75 @@ function App() {
                 }));
               }}
             />
-            <div className="inputCurrency">INR</div>
-          </div>
-          <div className="tokenHeading">
-            Estimate Number of ETH You will Get
-          </div>
-          {!isNaN(
-            parseFloat(currentAsset.amount) / parseFloat(currentAsset.value)
-          ) ? (
-            <div className="tokenCount">
-              {parseFloat(currentAsset.amount) / parseFloat(currentAsset.value)}
+            <div className="currency">INR</div>
+            {/* </div> */}
+            <div className="assetHeadingContainer">
+              <div className="assetHeadingName  estimate marginContainer">
+                Estimate Number of ETH You will Get
+              </div>
             </div>
-          ) : (
-            <div className="tokenCount">0</div>
-          )}
-
-          <div className="buyButton"> Buy </div>
-        </>
-      )}
-      {modal && (
-        <div className="assetSelectContainer">
-          <img
-            src={IMAGES.CLOSE}
-            alt="close"
-            className="closeContainer"
-            onClick={() => {
-              setModal(false);
-              setIndex(-1);
-            }}
-          />
-          <div>
-            <img src={IMAGES.SEARCH} alt="search" className="searchImage" />
-            <input
-              className="searchContainer"
-              placeholder="Search chains"
-              onChange={(e) => handleSearch(e.target.value)}
-              value={text}
-            />
-          </div>
-          <div className="listContainer">
-            {assets.map((data, i) => {
-              return (
-                <div
-                  className="assetListContainer"
-                  onClick={() => handleSelect(i)}
-                >
-                  <img
-                    src={data.image}
-                    alt="imageasset"
-                    className="assetListImage"
-                  />
-                  <div className="assetListName">{data.name}</div>
-                  {index === i && (
-                    <img
-                      src={IMAGES.TICK}
-                      alt="tick"
-                      className="tickContainer"
-                    />
-                  )}
+            <div className="assetInputContainer">
+              {!isNaN(
+                parseFloat(currentAsset.amount) / parseFloat(currentAsset.value)
+              ) ? (
+                <div className="tokenCount">
+                  {parseFloat(currentAsset.amount) /
+                    parseFloat(currentAsset.value)}
                 </div>
-              );
-            })}
+              ) : (
+                <div className="tokenCount">0</div>
+              )}
+            </div>
+            <div className="buyButton">Buy</div>
           </div>
-        </div>
-      )}
+        )}
+        {modal && (
+          <div className="assetSelectContainer">
+            <img
+              src={IMAGES.CLOSE}
+              alt="close"
+              className="closeContainer"
+              onClick={() => {
+                setModal(false);
+                setIndex(-1);
+              }}
+            />
+            <div>
+              <img src={IMAGES.SEARCH} alt="search" className="searchImage" />
+              <input
+                className="searchContainer"
+                placeholder="Search chains"
+                onChange={(e) => handleSearch(e.target.value)}
+                value={text}
+              />
+            </div>
+            <div className="listContainer">
+              {assets.map((data, i) => {
+                return (
+                  <div
+                    className="assetListContainer"
+                    onClick={() => handleSelect(i)}
+                  >
+                    <img
+                      src={data.image}
+                      alt="imageasset"
+                      className="assetListImage"
+                    />
+                    <div className="assetListName">{data.name}</div>
+                    {index === i && (
+                      <img
+                        src={IMAGES.TICK}
+                        alt="tick"
+                        className="tickContainer"
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
