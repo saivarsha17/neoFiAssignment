@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react';
 import { allAssets } from './constants';
 function App() {
   const [currentAsset, setCurrentAsset] = useState({
-    name: 'Ethereum',
-    token: 'ETHUSDT',
-    image: IMAGES.ASSET,
+    name: 'Cardano',
+    token: 'ADAUSDT',
+    image: IMAGES.CARDANO,
     value: '0',
     amount: '0',
   });
   const [modal, setModal] = useState(false);
   const [text, setText] = useState('');
-  const [index, setIndex] = useState(-1);
+  const [index, setIndex] = useState('ETHUSDT');
   const [assets, setAssets] = useState([]);
   const handleSearch = (searchText) => {
     setText(searchText);
@@ -32,7 +32,7 @@ function App() {
       token: assets[i].token,
     }));
 
-    setIndex(i);
+    setIndex(assets[i].token);
     setModal(false);
     setText('');
     setAssets(allAssets);
@@ -164,6 +164,8 @@ function App() {
               className="closeContainer"
               onClick={() => {
                 setModal(false);
+                setText('');
+                setAssets(allAssets);
               }}
             />
             <div>
@@ -190,7 +192,7 @@ function App() {
                       />
                       <div className="assetListName">{data.name}</div>
                     </div>
-                    {index === i && (
+                    {data.token === index && (
                       <img
                         src={IMAGES.TICK}
                         alt="tick"

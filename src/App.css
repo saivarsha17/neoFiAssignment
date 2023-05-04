@@ -188,6 +188,7 @@
   height: 2.441vh;
 
   margin-left: 1.74vw;
+  border-radius: 50%;
 }
 .amountHeading {
   width: 12.99vw;
@@ -303,6 +304,8 @@
 .assetListImage {
   width: 1.66vw;
   height: 2.34vh;
+  min-width: 1.66vw;
+
   padding-left: 1.11vw;
 }
 .assetListName {
@@ -339,5 +342,4 @@
   height: 1.171vh;
 
   margin-right: 1.319vw;
-  overflow: scroll;
 }
